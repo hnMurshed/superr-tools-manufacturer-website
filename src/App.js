@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        <p className='text-red-500'>
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <a
@@ -17,6 +17,8 @@ function App() {
         >
           Learn React
         </a>
+        <button class="inline-block cursor-pointer rounded-md bg-primary px-4 py-3 text-center text-sm font-semibold uppercase text-secondary transition duration-200 ease-in-out hover:bg-blue-900">Daisy apa connected</button>
+
       </header>
     </div>
   );
