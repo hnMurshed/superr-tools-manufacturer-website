@@ -3,6 +3,8 @@
 * Tailwind css
 * Daisy UI
 * React Router
+* Firebase
+* React firebase hooks
 
 # Getting Started with Create React App
 

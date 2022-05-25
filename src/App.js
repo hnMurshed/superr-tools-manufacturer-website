@@ -1,7 +1,11 @@
 import logo from './logo.svg';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import './App.css';
+import auth from './firebase.config';
 
 function App() {
+  const [user] = useAuthState(auth);
+  console.log(auth);
   return (
     <div className="App">
       <header className="App-header">
