@@ -34,28 +34,45 @@ const Benner = () => {
     return (
         <section className='relative'>
             <div className="carousel w-full">
-                <div id="slide1" className="carousel-item relative w-full" style={handToolSlide}>
+                <div id="slide1" className="carousel-item flex items-center justify-center relative w-full h-screen" style={handToolSlide}>
+                    <div className=' w-1/2 text-white bg-[rgba(0,0,0,0.5)] p-5'>
+                        <h2 className='text-4xl font-bold uppercase text-green-400'>Hand tools</h2>
+                        <p className='my-4'>Top rated high-quality hand tools manufacturer and exporter. Your customers will never feel bad after purchasing.</p>
+                        <button class="btn btn-sm bg-secondary hover:bg-blue-400 text-white rounded-[20px] border-0 px-5">Explore Now</button>
+                    </div>
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide4" className="btn btn-circle">❮</a>
                         <a href="#slide2" className="btn btn-circle">❯</a>
                     </div>
                 </div>
-                <div id="slide2" className="carousel-item relative w-full" style={cuttingToolSlide}>
-                    <img src="https://api.lorem.space/image/car?w=800&h=200&hash=500B67FB" alt='' className="w-full" /> /
+                <div id="slide2" className="carousel-item flex justify-center items-center relative w-full h-screen" style={cuttingToolSlide}>
+                    <div className=' w-1/2 text-white bg-[rgba(0,0,0,0.5)] p-5'>
+                        <h2 className='text-4xl font-bold uppercase text-orange-500'>Cutting Tools</h2>
+                        <p className='my-4'>When quality matters to your customers, choosing the right and quality tools is mostly importand.</p>
+                        <button class="btn btn-sm bg-secondary hover:bg-blue-400 text-white rounded-[20px] border-0 px-5">Explore Now</button>
+                    </div>
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide1" className="btn btn-circle">❮</a>
                         <a href="#slide3" className="btn btn-circle">❯</a>
                     </div>
                 </div>
-                <div id="slide3" className="carousel-item relative w-full" style={industrialToolSlide}>
-                    <img src="https://api.lorem.space/image/car?w=800&h=200&hash=A89D0DE6" alt='' className="w-full" /> /
+                <div id="slide3" className="carousel-item flex justify-center items-center relative w-full h-screen" style={industrialToolSlide}>
+                    <div className=' w-1/2 text-white bg-[rgba(0,0,0,0.5)] p-5'>
+                        <h2 className='text-4xl font-bold uppercase'>Industrial tools</h2>
+                        <p className='my-4'>Serving the market for over 7 years providing exclusive and quality tools</p>
+                        <button class="btn btn-sm bg-secondary hover:bg-blue-400 text-white rounded-[20px] border-0 px-5">Explore Now</button>
+                    </div>
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide2" className="btn btn-circle">❮</a>
                         <a href="#slide4" className="btn btn-circle">❯</a>
                     </div>
                 </div>
-                <div id="slide4" className="carousel-item relative w-full" style={partnershipSlide}>
-                    <img src="https://api.lorem.space/image/car?w=800&h=200&hash=225E6693" alt='' className="w-full" /> /
+                <div id="slide4" className="carousel-item flex justify-center items-center relative w-full h-screen" style={partnershipSlide}>
+                    <div className=' w-1/2 text-white bg-[rgba(0,0,0,0.5)] p-5'>
+                        <h2 className='text-4xl font-bold uppercase text-cyan-500'>Partnership Business</h2>
+                        <p className='my-4'>We are really happy to work with you as partnership. We incredible partnership opportunities for you.</p>
+                        <button class="btn btn-sm bg-secondary hover:bg-blue-400 text-white rounded-[20px] border-0 px-5">Explore Now</button>
+                    </div>
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide3" className="btn btn-circle">❮</a>
                         <a href="#slide1" className="btn btn-circle">❯</a>
