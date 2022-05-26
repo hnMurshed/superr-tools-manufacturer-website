@@ -12,7 +12,7 @@ const About = () => {
                     <div class="hero-content items-start flex-col lg:flex-row">
                         <div className='basis-1/2'>
                             <h2 className='text-4xl mb-4 text-center font-bold'>About <span className='text-secondary'>Superr Tools</span></h2>
-                            <p className='my-4'>The Alok Tools Brand is 40 years old and an ISO 9001:2015 certified company Headquartered in Gurugram, Haryana, INDIA.  Ozar Tools, the global tool brand from the house of ALOK INTERNATIONAL PVT. LTD., is a world-renowned high-quality Tools manufacturing company. We are a leading supplier of ever-increasing “range” of high-quality tools used in a variety of markets and applications throughout the world.</p>
+                            <p className='my-4'>The Superr Tools brand was established in 2013. A Banglades gov. certified company Headquartered in chattagram, Bangladesh. Superr Tools is a world-renowned high-quality Tools manufacturing company. We are a leading supplier of ever-increasing “range” of high-quality tools used in a variety of markets and applications throughout the world.</p>
                             <p>It’s something of a cliché, but we genuinely are big enough to cope and small enough to care. Many of our team have backgrounds in manufacturing & construction, so we know only too well the importance of a reliable supplier.</p>
                             <button class="btn btn-outline btn-secondary mt-5">Learn More</button>
                         </div>
