@@ -5,6 +5,7 @@
 * React Router
 * Firebase
 * React firebase hooks
+* React hook form
 
 # Getting Started with Create React App
 
