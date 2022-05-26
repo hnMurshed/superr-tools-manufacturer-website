@@ -1,0 +1,101 @@
+[
+    {
+        "_id": 1,
+        "name": "COUNTERSINKS 90° (DIN-335 FORM C)",
+        "category": "Cutting Tools",
+        "description": "Our Countersink is made from high speed steel. Features 3 cutting edges designed for chatter free countersinking. The nominal diameter is tapered towards the shank.",
+        "price": 5,
+        "stock": 1000,
+        "img": "https://i.ibb.co/4FMvPh6/COUNTERSINKS-90.jpg"
+    },
+    {
+        "_id": 2,
+        "name": "Single Angle Dovetail Cutters",
+        "category": "Cutting Tools",
+        "description": "Used to produce Dovetail slide ways in machine Tool tables, jigs and fixtures. Designed to take the place of arbor type cutters. Can be used both in manual and CNC machines. Suitable for use in a wide range of ferrous and non-ferrous materials. Available in Angle 45s or 50°, 55° & 60° deg.",
+        "price": 3.5,
+        "stock": 1000,
+        "img": "https://i.ibb.co/jGBjG35/Single-Angle-Dovetail-Cutters.jpg"
+    },
+    {
+        "_id": 3,
+        "name": "High Speed Steel Lathe Tools Set",
+        "category": "Cutting Tools",
+        "description": "The Lathe Tools Set is consists of different M2 HSS Tools for turning and facing work on lathe. These tools can be used for machining most materials including wood, plastic, aluminium, brass and steel. The tools retain their hardness at high temperatures. The major advantage of HSS tool is their ability to be easily sharpened by standard grinding wheels.",
+        "price": 39,
+        "stock": 1000,
+        "img": "https://i.ibb.co/8Yx4Twn/High-Speed-Steel-Lathe-Tools-Set.jpg"
+    },
+    {
+        "_id": 4,
+        "name": "Hand Tap Set HSS DIN 352 3 Pcs",
+        "category": "Cutting Tools",
+        "description": "The Hand Tap Set consisting of a taper tap (form A), a second tap (form D) and third tap (form C) for producing metric ISO standard threads by hand in accordance with DIN13 in through holes and blind holes in the steel, non-ferrous metals and cast iron material groups up to a strength of 800 N/mm².",
+        "price": 12,
+        "stock": 1000,
+        "img": "https://i.ibb.co/cch7T23/Hand-Tap-Set.jpg"
+    },
+    {
+        "_id": 5,
+        "name": "10 Pcs Carbide Tip Tool Set",
+        "category": "Cutting Tools",
+        "description": "The Carbide Tip Tool Set is very useful tool set for various types of machine cutting operations. Used on steel and steel alloys. Can effortlessly cut hard or abrasive material. Carbide retains hardness at high temperatures. Suitable for 1/2”/12 mm height tool posts.",
+        "price": 29,
+        "stock": 1000,
+        "img": "https://i.ibb.co/rM2NMzm/10-Pcs-Carbide-Tip-Tool-Set.jpg"
+    },
+    {
+        "_id": 6,
+        "name": "Cast Iron C Clamps",
+        "category": "Hand Tools",
+        "description": "This most popular and complete lisne of light duty 'c' clamp provides quality at an economy price. Preferred for most do-it-yourself and household clamping. Smoothly cut acme threads with a black finish. The clamp casting is made of ductile iron for high durability.",
+        "price": 25,
+        "stock": 1000,
+        "img": "https://i.ibb.co/DWvpJGr/Cast-Iron-C-Clamps.jpg"
+    },
+    {
+        "_id": 7,
+        "name": "Micrometer Screw Gauge",
+        "category": "Hand Tools",
+        "description": "Micrometer Screw Gauge is a great Handy economical tool for measuring purposes. It is made of silver coloured material. Measure thickness Graduated in 1/25 mm increments Great for precise measurements and very accurate.",
+        "price": 3,
+        "stock": 1000,
+        "img": "https://i.ibb.co/yNg8cW1/Micrometer-Screw-Gauge.jpg"
+    },
+    {
+        "_id": 8,
+        "name": "Bahco 268 Junior Hacksaw",
+        "category": "Hand Tools",
+        "description": "The Bahco 268 Mini Hacksaw is a modern junior hacksaw, with a frame made from rigid, zinc plated, flat steel and an ergonomic, plastic, pistol-grip styled handle. Replacing and tensioning of the blade is through adjustment of the nut incorporated in the handle.",
+        "price": 16,
+        "stock": 1000,
+        "img": "https://i.ibb.co/JCTkYHp/Bahco-268-Junior-Hacksaw.jpg"
+    },
+    {
+        "_id": 9,
+        "name": "Oil Filter Chain Wrench",
+        "category": "Hand Tools",
+        "description": "This chain wrench is ideal to disassemble any cylindrical object with a diameter of up to 105 mm. Features a rubber coated handle for greater comfort.",
+        "price": 9,
+        "stock": 1000,
+        "img": "https://i.ibb.co/qpHH4hK/oil-filter-wrench-chain-type.jpg"
+    },
+    {
+        "_id": 10,
+        "name": "Revolving Hole Punch Plier",
+        "category": "Hand Tools",
+        "description": "The revolving hole punch plier is made of heavy gage blackened steel material, spring-loaded. Helpful in punching round holes in leather, plastic, rubber, and cardboard. The revolving head incorporates 6 hardened punches.",
+        "price": 7,
+        "stock": 1000,
+        "img": "https://i.ibb.co/wCt6nrM/Revolving-Hole-Punch-Plier.jpg"
+    },
+    {
+        "_id": 11,
+        "name": "Nickle Plated Spiral Drill",
+        "category": "Hand Tools",
+        "description": "Easy to use and easy to grip, this push hand drill fits in tight spots and works anywhere. Includes extra collet that can fit 1mm to 2mm; octagonal metal grip. Just make your starter hole, and insert your screwdriver bit of choice",
+        "price": 12,
+        "stock": 1000,
+        "img": "https://i.ibb.co/d4WVtMb/Spiral-Drill.jpg"
+    }
+]

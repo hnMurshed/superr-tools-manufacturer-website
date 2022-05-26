@@ -38,7 +38,7 @@ const Benner = () => {
                     <div className=' w-1/2 text-white bg-[rgba(0,0,0,0.5)] p-5'>
                         <h2 className='text-4xl font-bold uppercase text-green-400'>Hand tools</h2>
                         <p className='my-4'>Top rated high-quality hand tools manufacturer and exporter. Your customers will never feel bad after purchasing.</p>
-                        <button class="btn btn-sm bg-secondary hover:bg-blue-400 text-white rounded-[20px] border-0 px-5">Explore Now</button>
+                        <button className="btn btn-sm bg-secondary hover:bg-blue-400 text-white rounded-[20px] border-0 px-5">Explore Now</button>
                     </div>
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide4" className="btn btn-circle">❮</a>
@@ -49,7 +49,7 @@ const Benner = () => {
                     <div className=' w-1/2 text-white bg-[rgba(0,0,0,0.5)] p-5'>
                         <h2 className='text-4xl font-bold uppercase text-orange-500'>Cutting Tools</h2>
                         <p className='my-4'>When quality matters to your customers, choosing the right and quality tools is mostly importand.</p>
-                        <button class="btn btn-sm bg-secondary hover:bg-blue-400 text-white rounded-[20px] border-0 px-5">Explore Now</button>
+                        <button className="btn btn-sm bg-secondary hover:bg-blue-400 text-white rounded-[20px] border-0 px-5">Explore Now</button>
                     </div>
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide1" className="btn btn-circle">❮</a>
@@ -60,7 +60,7 @@ const Benner = () => {
                     <div className=' w-1/2 text-white bg-[rgba(0,0,0,0.5)] p-5'>
                         <h2 className='text-4xl font-bold uppercase'>Industrial tools</h2>
                         <p className='my-4'>Serving the market for over 7 years providing exclusive and quality tools</p>
-                        <button class="btn btn-sm bg-secondary hover:bg-blue-400 text-white rounded-[20px] border-0 px-5">Explore Now</button>
+                        <button className="btn btn-sm bg-secondary hover:bg-blue-400 text-white rounded-[20px] border-0 px-5">Explore Now</button>
                     </div>
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide2" className="btn btn-circle">❮</a>
@@ -71,7 +71,7 @@ const Benner = () => {
                     <div className=' w-1/2 text-white bg-[rgba(0,0,0,0.5)] p-5'>
                         <h2 className='text-4xl font-bold uppercase text-cyan-500'>Partnership Business</h2>
                         <p className='my-4'>We are really happy to work with you as partnership. We incredible partnership opportunities for you.</p>
-                        <button class="btn btn-sm bg-secondary hover:bg-blue-400 text-white rounded-[20px] border-0 px-5">Explore Now</button>
+                        <button className="btn btn-sm bg-secondary hover:bg-blue-400 text-white rounded-[20px] border-0 px-5">Explore Now</button>
                     </div>
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide3" className="btn btn-circle">❮</a>

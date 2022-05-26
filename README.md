@@ -7,6 +7,7 @@
 * React firebase hooks
 * React hook form
 * React Icons
+* React query
 
 # Getting Started with Create React App
 
