@@ -6,7 +6,8 @@ const Header = () => {
         <li><Link to='/'>Home</Link></li>
     </>
     return (
-        <header className="navbar bg-base-100">
+        <header className="bg-base-100 sticky top-0 z-50">
+            <div className="navbar container mx-auto">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabindex="0" className="btn btn-ghost lg:hidden">
@@ -16,7 +17,7 @@ const Header = () => {
                         {navItems}
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost text-xl uppercase">Superr Tools</Link>
+                <Link to='/' className="text-xl uppercase font-bold">Superr Tools</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
@@ -40,6 +41,8 @@ const Header = () => {
                         <li><span>Logout</span></li>
                     </ul>
                 </div>
+                <Link to='/login' class="btn btn-sm btn-outline btn-secondary border-2 rounded-md">Login</Link>
+            </div>
             </div>
         </header>
     );

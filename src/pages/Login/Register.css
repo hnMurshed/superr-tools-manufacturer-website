@@ -1,0 +1,73 @@
+.register-box {
+    width: 615px;
+    padding: 50px 80px;
+}
+.input-box {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    background-color: white;
+    padding: 0 20px;
+    cursor: text;
+    margin-bottom: 30px;
+}
+.input-normal {
+    border-bottom: 5px solid black;
+}
+.input-success {
+    border-bottom: 5px solid lightseagreen;
+}
+.input-error {
+    border-bottom: 5px solid #FB923C;
+    color: #FB923C;
+}
+.input-box label {
+    width: 100%;
+    display: block;
+    cursor: text;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    transition: 200ms;
+}
+.clicked {
+    font-size: 18px;
+    transform: translateY(-10px);
+}
+.noclicked {
+    font-size: 26px;
+    transform: translateY(0);
+}
+.input-box input {
+    width: 100%;
+    margin-top: 15px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+.input-submit {
+    color: white;
+    font-weight: 600;
+    font-size: 17px;
+    letter-spacing: 1px;
+    border: 1px solid white;
+    margin-top: 30px;
+    transition: 0.2s;
+}
+.input-submit:hover {
+    border-radius: 30px;
+}
+.signinup-link {
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.2s;
+}
+
+@media screen and (max-width: 640px) {
+    .register-box {
+        width: 100%;
+        padding: 50px 80px;
+    }
+}

@@ -8,6 +8,7 @@
 * React hook form
 * React Icons
 * React query
+* React toastify
 
 # Getting Started with Create React App
 
