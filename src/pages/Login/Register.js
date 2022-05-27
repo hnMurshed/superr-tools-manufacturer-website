@@ -64,7 +64,7 @@ const Register = () => {
 
     let errorElement;
     if (error) {
-        errorElement = <p className='text-danger mt-4'>{error.message}</p>
+        errorElement = <p className='text-orange-400 font-bold text-xl'>{error.message}</p>
     }
 
     if (loading) {
@@ -115,10 +115,10 @@ const Register = () => {
                         <input onClick={() => setActiveCheck(!activeCheck)} className='mr-2' type="checkbox" name="checkbox" id="checkbox" required />
                         <label htmlFor="checkbox">I agree to <strong>Terms & Conditions</strong> and <strong>Privacy Policy</strong></label>
                     </div>
-                    {errorElement}
                     <div>
                         <input className='input-submit w-full bg-accent py-3' type="submit" value="Create Your Account" />
                     </div>
+                    {errorElement}
                 </form>
                 <div className='text-center text-white my-3'>
                     <span className='text-xl font-bold'>or</span>
