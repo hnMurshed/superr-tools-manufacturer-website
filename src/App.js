@@ -1,4 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import Home from './pages/homepage/Home/Home';
 import Login from './pages/Login/Login';
@@ -10,6 +12,7 @@ import Header from './pages/shared/Header/Header';
 function App() {
   return (
     <div>
+      <ToastContainer />
       <Header />
       <Routes>
         <Route path='/' element={<Home />}></Route>

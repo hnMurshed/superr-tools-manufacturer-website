@@ -5,6 +5,7 @@ import auth from '../../firebase.init';
 import {FaGoogle} from 'react-icons/fa';
 import Loading from '../shared/Loading/Loading';
 import './SocialButtons.css';
+import useToken from '../../hooks/useToken';
 
 const SocialButtons = () => {
     const [signInWithGithub, user1, loading1, error1] = useSignInWithGithub(auth);
@@ -12,6 +13,8 @@ const SocialButtons = () => {
 
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
+
+    const [token] = useToken(user1 || user2);
 
     if (loading1 || loading2) {
         return <Loading></Loading>
@@ -22,7 +25,7 @@ const SocialButtons = () => {
         errorMessage = <p className='text-danger'>{error1?.message || error2?.message}</p>
     }
 
-    if (user1 || user2) {
+    if (token) {
         return <Navigate to={from} replace={true}></Navigate>
     }
     return (

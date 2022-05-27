@@ -5,13 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loading from '../shared/Loading/Loading';
 import SocialButtons from './SocialButtons';
-
-const style = {
-    padding: '60px 0',
-    backgroundImage: `url()`,
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-}
+import useToken from '../../hooks/useToken';
 
 const Login = () => {
     const [emailClicked, setEmailClicked] = useState(false);
@@ -44,16 +38,18 @@ const Login = () => {
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
 
+    const [token] = useToken(user);
+
     let errorElement;
     if (error) {
         errorElement = <p className='text-danger'>{error.message}</p>
     }
 
     useEffect( () => {
-        if (user) {
+        if (token) {
             navigate(from, {replace: true});
         }
-    }, [user]);
+    }, [token, navigate, from]);
 
     if (loading) {
         return <Loading></Loading>
@@ -86,7 +82,7 @@ const Login = () => {
                         <span onClick={ async () => {
                             await sendPasswordResetEmail(email)
                             toast.success('An email sent to you, please check!')
-                        }} className='signinup-link text-teal-200 hover:border-b-2 border-teal-200'>Please reset</span>
+                        }} className='signinup-link text-teal-200 hover:border-b-2 border-teal-200 cursor-pointer'>Please reset</span>
                     </div>
                     {errorElement}
                     <div>

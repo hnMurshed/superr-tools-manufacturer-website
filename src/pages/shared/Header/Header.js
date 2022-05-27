@@ -1,7 +1,18 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import {signOut} from 'firebase/auth';
 import { Link } from 'react-router-dom';
+import auth from '../../../firebase.init';
+import Loading from '../Loading/Loading';
 
 const Header = () => {
+    // react firebase hooks
+    const [user, loading, error] = useAuthState(auth);
+
+    if (loading) {
+        return <Loading></Loading>
+    }
+
     const navItems = <>
         <li><Link to='/'>Home</Link></li>
     </>
@@ -25,10 +36,14 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <div className="dropdown dropdown-end">
+                {
+                    user ? <div className="dropdown dropdown-end">
                     <label tabindex="0" className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 rounded-full">
-                            <img src="https://api.lorem.space/image/face?hash=33791" alt='' />
+                        <div style={{display: 'flex'}} className="w-10 rounded-full bg-slate-300 items-center justify-center">
+                            {
+                                user?.photoURL ? <img src={user?.photoURL} alt='' /> :
+                                <span className='text-3xl uppercase pb-[5px]'>{user?.displayName?.slice(0, 1)}</span>
+                            }
                         </div>
                     </label>
                     <ul tabindex="0" className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
@@ -38,10 +53,11 @@ const Header = () => {
                             </Link>
                         </li>
                         <li><a>Settings</a></li>
-                        <li><span>Logout</span></li>
+                        <li><span onClick={ () => signOut(auth)}>Logout</span></li>
                     </ul>
-                </div>
+                </div> : 
                 <Link to='/login' class="btn btn-sm btn-outline btn-secondary border-2 rounded-md">Login</Link>
+                }
             </div>
             </div>
         </header>
