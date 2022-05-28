@@ -8,7 +8,7 @@ import Loading from '../shared/Loading/Loading';
 
 const ManageUser = () => {
     const navigate = useNavigate();
-    const {data, isLoading, refetch} = useQuery('users', () => fetch('https://mysterious-ravine-35179.herokuapp.com/users').then(res => res.json()));
+    const { data, isLoading, refetch } = useQuery('users', () => fetch('https://mysterious-ravine-35179.herokuapp.com/users').then(res => res.json()));
 
     if (isLoading) {
         return <Loading></Loading>
@@ -17,28 +17,33 @@ const ManageUser = () => {
     const users = data.filter(user => user?.role !== 'admin');
 
     const updateUserRole = (user, isAdmin) => {
-        fetch(`https://mysterious-ravine-35179.herokuapp.com/update-user-role`, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json',
-                authorization: `Bearer ${localStorage.getItem('access_token')}`
-            },
-            body: JSON.stringify({user: user, isAdmin: isAdmin})
-        })
-        .then(res => {
-            if (res.status === 401 || res.status === 403) {
-                signOut(auth);
-                navigate('/login');
-                toast.error('Fobidden Access, only an admin can perform that');
-            }
-            return res.json();
-        })
-        .then(data => {
-            if (data.modifiedCount) {
-                refetch();
-                toast.success('User role successfully changed')
-            }
-        })
+        if (admins.length > 1 || isAdmin === true) {
+            fetch(`https://mysterious-ravine-35179.herokuapp.com/update-user-role`, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json',
+                    authorization: `Bearer ${localStorage.getItem('access_token')}`
+                },
+                body: JSON.stringify({ user: user, isAdmin: isAdmin })
+            })
+                .then(res => {
+                    if (res.status === 401 || res.status === 403) {
+                        signOut(auth);
+                        navigate('/login');
+                        toast.error('Fobidden Access, only an admin can perform that');
+                    }
+                    return res.json();
+                })
+                .then(data => {
+                    if (data.modifiedCount) {
+                        refetch();
+                        toast.success('User role successfully changed')
+                    }
+                })
+        }
+        else {
+            toast.error('Failed to remove, at least one admin is required');
+        }
     }
     return (
         <div>
