@@ -14,6 +14,7 @@ const ShippmentModal = ({ product, quantity, setModalOpen, refetch }) => {
     const onSubmit = data => {
 
         data.itemId = _id;
+        data.item = name;
         data.itemQuantity = quantity;
         data.totalPrice = totalPrice;
 
