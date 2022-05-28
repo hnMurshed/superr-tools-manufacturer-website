@@ -8,7 +8,7 @@ import Loading from '../shared/Loading/Loading';
 
 const ManageUser = () => {
     const navigate = useNavigate();
-    const {data, isLoading, refetch} = useQuery('users', () => fetch('http://localhost:5000/users').then(res => res.json()));
+    const {data, isLoading, refetch} = useQuery('users', () => fetch('https://mysterious-ravine-35179.herokuapp.com/users').then(res => res.json()));
 
     if (isLoading) {
         return <Loading></Loading>
@@ -17,7 +17,7 @@ const ManageUser = () => {
     const users = data.filter(user => user?.role !== 'admin');
 
     const updateUserRole = (user, isAdmin) => {
-        fetch(`http://localhost:5000/update-user-role`, {
+        fetch(`https://mysterious-ravine-35179.herokuapp.com/update-user-role`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
