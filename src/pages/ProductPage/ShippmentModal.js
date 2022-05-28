@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
-const ShippmentModal = ({ product, quantity, setModalOpen }) => {
+const ShippmentModal = ({ product, quantity, setModalOpen, refetch }) => {
     const [user] = useAuthState(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
 
@@ -17,9 +17,9 @@ const ShippmentModal = ({ product, quantity, setModalOpen }) => {
         data.itemQuantity = quantity;
         data.totalPrice = totalPrice;
 
-        console.log(data);
+        const updatedStock = stock - quantity;
 
-        fetch('http://localhost:5000/order', {
+        fetch('https://mysterious-ravine-35179.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -29,6 +29,17 @@ const ShippmentModal = ({ product, quantity, setModalOpen }) => {
             .then(res => res.json())
             .then(result => {
                 if (result.insertedId) {
+                    fetch(`https://mysterious-ravine-35179.herokuapp.com/tool/${_id}?updatedStock=${updatedStock}`, {
+                        method: 'PUT',
+                        headers: {
+                            'content-type': 'application/json'
+                        }
+                    })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        refetch();
+                    });
                     setModalOpen(false);
                     toast.success('Thans for your order');
                 }
@@ -36,11 +47,11 @@ const ShippmentModal = ({ product, quantity, setModalOpen }) => {
     };
     return (
         <div>
-            <input type="checkbox" id="shipping-modal" class="modal-toggle" />
-            <div class="modal modal-bottom sm:modal-middle">
-                <div style={{maxWidth: '64rem'}} class="modal-box w-10/12 md:w-1/2 relative">
+            <input type="checkbox" id="shipping-modal" className="modal-toggle" />
+            <div className="modal modal-bottom sm:modal-middle">
+                <div style={{maxWidth: '64rem'}} className="modal-box w-10/12 md:w-1/2 relative">
                     <h4 className='text-center text-3xl font-bold mb-5'>Shipping Address</h4>
-                    <label for="shipping-modal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    <label htmlFor="shipping-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <div className="divider"></div>
                     <div className="flex items-center justify-between mb-3">
                         <h4 className='text-xl font-bold'>{name}</h4>

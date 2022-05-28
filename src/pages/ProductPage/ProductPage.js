@@ -9,7 +9,7 @@ const ProductPage = () => {
     const [modalOpen, setModalOpen] = useState(false);
     const [quantity, setQuantity] = useState(50);
     const { productId } = useParams();
-    const { data: product, isLoading } = useQuery('product', () => fetch(`http://localhost:5000/tool/${productId}`).then(res => res.json()));
+    const { data: product, isLoading, refetch } = useQuery('product', () => fetch(`https://mysterious-ravine-35179.herokuapp.com/tool/${productId}`).then(res => res.json()));
 
     if (isLoading) {
         return <Loading></Loading>
@@ -24,7 +24,7 @@ const ProductPage = () => {
             </div>
             <div className="basis-1/2">
                 <h2 className='text-4xl font-bold'>{name}</h2>
-                <div class="divider"></div>
+                <div className="divider"></div>
                 <div className='flex items-center justify-between'>
                     <div className="flex items-center">
                         <span className='text-3xl font-bold'>${price}</span>
@@ -33,11 +33,11 @@ const ProductPage = () => {
                     </div>
                     <span>{stock} Pieces in stock</span>
                 </div>
-                <div class="form-control">
-                    <label class="label">
-                        <span class="label-text text-2xl">Quantity</span>
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text text-2xl">Quantity</span>
                     </label>
-                    <div class="flex">
+                    <div className="flex">
                         <div onClick={() => {
                             if (quantity > 50) {
                                 setQuantity(quantity - 1)
@@ -49,7 +49,7 @@ const ProductPage = () => {
                             <span className='text-4xl pb-2'>-</span>
                         </div>
                         <div className="w-20 flex items-center justify-center border border-gray-300">
-                            <p class="text-3xl">{quantity}</p>
+                            <p className="text-3xl">{quantity}</p>
                         </div>
                         <div onClick={() => {
                             if (quantity < stock) {
@@ -66,7 +66,7 @@ const ProductPage = () => {
                         <button disabled={quantity > stock} className='w-full btn btn-secondary uppercase'>Add To Card</button>
                         <label onClick={ () => setModalOpen(true)} htmlFor='shipping-modal' disabled={quantity > stock} className='w-full btn btn-accent uppercase mt-3'>Buy It Now</label>
                     </div>
-                    <div class="divider"></div>
+                    <div className="divider"></div>
                     <h3 className='text-3xl font-bold text-center uppercase'>Description</h3>
                     <p className='my-5'>{description}</p>
                     <p><strong>Category: </strong>{category}</p>
@@ -77,6 +77,7 @@ const ProductPage = () => {
                 product={product}
                 quantity={quantity}
                 setModalOpen={setModalOpen}
+                refetch={refetch}
             ></ShippmentModal>
             }
         </section>
