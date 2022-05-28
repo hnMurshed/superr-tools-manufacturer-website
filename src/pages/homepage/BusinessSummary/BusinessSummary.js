@@ -5,7 +5,7 @@ import feedbackIcon from '../../../images/icons/feedback.png';
 const BusinessSummary = () => {
     return (
         <section className='py-8 bg-neutral'>
-            <div className="container mx-auto">
+            <div className="custom-container mx-auto">
                 <h2 className='text-3xl font-bold text-accent text-center mb-4 capitalize'>What makes us different from others</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
 

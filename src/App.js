@@ -8,6 +8,7 @@ import Register from './pages/Login/Register';
 import ProductPage from './pages/ProductPage/ProductPage';
 import Footer from './pages/shared/Footer/Footer';
 import Header from './pages/shared/Header/Header';
+import RequireAuth from './pages/shared/RequireAuth/RequireAuth';
 
 function App() {
   return (
@@ -17,7 +18,11 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='home' element={<Home />}></Route>
-        <Route path='products/:productId' element={<ProductPage />}></Route>
+        <Route path='products/:productId' element={
+          <RequireAuth>
+            <ProductPage />
+          </RequireAuth>
+        }></Route>
         <Route path='login' element={<Login />}></Route>
         <Route path='register' element={<Register />}></Route>
       </Routes>

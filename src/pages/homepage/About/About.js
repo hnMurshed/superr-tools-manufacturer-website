@@ -6,7 +6,7 @@ const About = () => {
     const onSubmit = data => console.log(data);
     return (
         <div className='py-8 bg-[#FCFCFC]'>
-            <div className="container mx-auto">
+            <div className="custom-container mx-auto">
 
                 <div className="hero">
                     <div className="hero-content items-start flex-col lg:flex-row">

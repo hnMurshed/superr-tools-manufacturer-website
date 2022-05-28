@@ -17,8 +17,8 @@ const Header = () => {
         <li><Link to='/'>Home</Link></li>
     </>
     return (
-        <header className="bg-base-100 sticky top-0 z-50">
-            <div className="navbar container mx-auto">
+        <header className="bg-accent sticky top-0 z-50 text-white">
+            <div className="navbar custom-container mx-auto">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabindex="0" className="btn btn-ghost lg:hidden">
