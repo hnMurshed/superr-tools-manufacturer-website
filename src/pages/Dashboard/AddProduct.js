@@ -9,8 +9,7 @@ const AddProduct = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const navigate = useNavigate();
 
-    const onSubmit = data => {
-        console.log(data);
+    const onSubmit = (data, event) => {
         fetch('https://mysterious-ravine-35179.herokuapp.com/addproduct', {
             method: 'POST',
             headers: {
@@ -28,7 +27,8 @@ const AddProduct = () => {
             })
             .then(data => {
                 if (data.insertedId) {
-                    toast.success('Product successfully added')
+                    toast.success('Product successfully added');
+                    event.target.reset();
                 }
                 else {
                     toast.error('Failed to add')

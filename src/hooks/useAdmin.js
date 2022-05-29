@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const useAdmin = user => {
-    const [admin, setAdmin] = useState([false]);
+    const [admin, setAdmin] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect( () => {
@@ -18,6 +18,7 @@ const useAdmin = user => {
             })
             .then(res => res.json())
             .then(data => {
+                console.log(data);
                 setAdmin(data.admin);
             })
             .finally( () => {
