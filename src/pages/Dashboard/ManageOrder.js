@@ -9,7 +9,7 @@ import Loading from '../shared/Loading/Loading';
 const ManageOrder = () => {
     const navigate = useNavigate();
     const [user] = useAuthState(auth);
-    const { data: orders, isLoading } = useQuery('allorders', () => fetch(`http://localhost:5000/allorders`, {
+    const { data: orders, isLoading } = useQuery('allorders', () => fetch(`https://mysterious-ravine-35179.herokuapp.com/allorders`, {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('access_token')}`

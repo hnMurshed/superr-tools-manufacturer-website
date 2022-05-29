@@ -8,7 +8,7 @@ const DeleteProductModal = ({ deleteProduct, refetch }) => {
     const navigate = useNavigate();
     console.log(deleteProduct);
     const handleConfirm = () => {
-        fetch(`http://localhost:5000/deleteproduct/${deleteProduct._id}`, {
+        fetch(`https://mysterious-ravine-35179.herokuapp.com/deleteproduct/${deleteProduct._id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('access_token')}`
