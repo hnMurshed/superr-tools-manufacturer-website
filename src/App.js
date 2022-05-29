@@ -19,6 +19,13 @@ import MyOrders from './pages/Dashboard/MyOrders';
 import WriteReview from './pages/Dashboard/WriteReview';
 import MyProfile from './pages/Dashboard/MyProfile';
 import AllProducts from './pages/AllProducts/AllProducts';
+import NotFound from './pages/NotFound/NotFound';
+import Question1 from './pages/Blogs/Question1';
+import Question2 from './pages/Blogs/Question2';
+import Question3 from './pages/Blogs/Question3';
+import Question4 from './pages/Blogs/Question4';
+import Question5 from './pages/Blogs/Question5';
+import Question6 from './pages/Blogs/Question6';
 
 function App() {
   return (
@@ -41,15 +48,23 @@ function App() {
           <Route path='addproduct' element={<AddProduct />}></Route>
           <Route path='manageusers' element={<ManageUser />}></Route>
           <Route path='manageproducts' element={<ManageProducts />}></Route>
-          <Route path='manageorder' element={<ManageOrder />}></Route>
-          <Route path='myorders' element={<MyOrders />}></Route>
+          <Route index element={<ManageOrder />}></Route>
+          <Route index element={<MyOrders />}></Route>
           <Route path='writereview' element={<WriteReview />}></Route>
           <Route path='myprofile' element={<MyProfile />}></Route>
         </Route>
         <Route path='login' element={<Login />}></Route>
-        <Route path='blogs' element={<Blogs />}></Route>
+        <Route path='blogs' element={<Blogs />}>
+          <Route index element={<Question1 />}></Route>
+          <Route path='question-2' element={<Question2 />}></Route>
+          <Route path='question-3' element={<Question3 />}></Route>
+          <Route path='question-4' element={<Question4 />}></Route>
+          <Route path='question-5' element={<Question5 />}></Route>
+          <Route path='question-6' element={<Question6 />}></Route>
+        </Route>
         <Route path='register' element={<Register />}></Route>
         <Route path='allproducts' element={<AllProducts />}></Route>
+        <Route path='*' element={<NotFound />}></Route>
       </Routes>
       <Footer></Footer>
     </div>

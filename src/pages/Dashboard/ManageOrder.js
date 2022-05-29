@@ -29,7 +29,7 @@ const ManageOrder = () => {
     console.log(orders);
     return (
         <div>
-            <h4 className='text-center text-2xl'>Manage Orders: {orders.length}</h4>
+            <h4 className='text-center text-2xl my-5'>Manage Orders</h4>
             <div class="overflow-x-auto">
                 <table class="table table-zebra w-full">
                     <thead>
