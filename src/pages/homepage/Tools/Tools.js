@@ -1,5 +1,6 @@
 import React from 'react';
 import { useQuery } from 'react-query';
+import { Link } from 'react-router-dom';
 import Loading from '../../shared/Loading/Loading';
 import Tool from './Tool';
 
@@ -21,6 +22,9 @@ const Tools = () => {
                             tool={tool}
                         ></Tool>)
                     }
+                </div>
+                <div className="text-center mt-6">
+                    <Link to='/allproducts' className='btn btn-accent text-white'>View All</Link>
                 </div>
             </div>
         </section>

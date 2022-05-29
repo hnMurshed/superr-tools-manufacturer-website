@@ -18,6 +18,7 @@ import RequireAuth from './pages/shared/RequireAuth/RequireAuth';
 import MyOrders from './pages/Dashboard/MyOrders';
 import WriteReview from './pages/Dashboard/WriteReview';
 import MyProfile from './pages/Dashboard/MyProfile';
+import AllProducts from './pages/AllProducts/AllProducts';
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
         <Route path='login' element={<Login />}></Route>
         <Route path='blogs' element={<Blogs />}></Route>
         <Route path='register' element={<Register />}></Route>
+        <Route path='allproducts' element={<AllProducts />}></Route>
       </Routes>
       <Footer></Footer>
     </div>

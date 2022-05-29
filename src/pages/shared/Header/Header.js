@@ -15,8 +15,10 @@ const Header = () => {
 
     const navItems = <>
         <li><Link to='/'>Home</Link></li>
+        <li><Link to='/allproducts'>All Products</Link></li>
         <li><Link to='/dashboard'>Deshboard</Link></li>
         <li><Link to='/blogs'>Blogs</Link></li>
+        <li><Link to='/portfolio'>Portfolio</Link></li>
     </>
     return (
         <header className="bg-accent sticky top-0 z-50 text-white">
