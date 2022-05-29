@@ -1,15 +1,18 @@
 import { signOut } from 'firebase/auth';
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import CancelOrder from '../shared/CancelOrder/CancelOrder';
 import Loading from '../shared/Loading/Loading';
 
 const MyOrders = () => {
+    const [cancelOrder, setCancelOrder] = useState({});
+
     const navigate = useNavigate();
     const [user] = useAuthState(auth);
-    const { data: orders, isLoading } = useQuery('orders', () => fetch(`https://mysterious-ravine-35179.herokuapp.com/orders?email=${user.email}`, {
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`https://mysterious-ravine-35179.herokuapp.com/orders?email=${user.email}`, {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('access_token')}`
@@ -51,13 +54,17 @@ const MyOrders = () => {
                                 <td>${order.totalPrice}</td>
                                 <td>
                                     <button class="btn btn-secondary btn-sm mr-2">Pay</button>
-                                    <button class="btn bg-red-300 btn-sm">Cancel</button>
+                                    <label onClick={ () => setCancelOrder(order)} htmlFor='cancelOrderModal' class="btn bg-red-300 btn-sm">Cancel</label>
                                 </td>
                             </tr>)
                         }
                     </tbody>
                 </table>
             </div>
+            <CancelOrder
+                cancelOrder={cancelOrder}
+                refetch={refetch}
+            ></CancelOrder>
         </div>
     );
 };
