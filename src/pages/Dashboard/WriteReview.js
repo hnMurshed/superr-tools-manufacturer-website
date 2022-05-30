@@ -37,6 +37,16 @@ const WriteReview = () => {
                     })} />
                     {errors.email?.type === 'required' && <p className='text-red-400'>{errors.email.message}</p>}
                 </div>
+                <div className="mb-3">
+                    <label htmlFor="rating">Rating</label>
+                    <div class="rating">
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                    </div>
+                </div>
                 <div className='mb-3'>
                     <label htmlFor="reviewTitle">Review Title</label>
                     <input type='text' id='reviewTitle' placeholder='Give your reveiw a title' className=' w-full border p-2' {...register("reviewTitle", {

@@ -8,7 +8,7 @@ import CancelOrder from '../shared/CancelOrder/CancelOrder';
 import Loading from '../shared/Loading/Loading';
 
 const MyOrders = () => {
-    const [cancelOrder, setCancelOrder] = useState({});
+    const [cancelOrder, setCancelOrder] = useState(null);
 
     const navigate = useNavigate();
     const [user] = useAuthState(auth);
@@ -54,17 +54,19 @@ const MyOrders = () => {
                                 <td>${order.totalPrice}</td>
                                 <td>
                                     <button class="btn btn-secondary btn-sm mr-2">Pay</button>
-                                    <label onClick={ () => setCancelOrder(order)} htmlFor='cancelOrderModal' class="btn bg-red-300 btn-sm">Cancel</label>
+                                    <label onClick={() => setCancelOrder(order)} htmlFor='cancelOrderModal' class="btn bg-red-300 btn-sm">Cancel</label>
                                 </td>
                             </tr>)
                         }
                     </tbody>
                 </table>
             </div>
-            <CancelOrder
-                cancelOrder={cancelOrder}
-                refetch={refetch}
-            ></CancelOrder>
+            {
+                cancelOrder && <CancelOrder
+                    cancelOrder={cancelOrder}
+                    refetch={refetch}
+                ></CancelOrder>
+            }
         </div>
     );
 };

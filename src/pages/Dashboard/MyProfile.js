@@ -76,11 +76,11 @@ const MyProfile = () => {
                     <div className={`${edit ? 'hidden' : 'flex'} items-start gap-5`}>
                         <div>
                             <p className='font-bold mt-2'>Full Name</p>
-                            <span>{userProfile.profile.name ? userProfile.profile.name : user.displayName}</span>
+                            <span>{userProfile ? userProfile.profile.name : user.displayName}</span>
                             <p className='font-bold mt-2'>Email Adress</p>
                             <span>{user.email}</span>
                             <p className='font-bold mt-2'>Phone</p>
-                            <span>{userProfile.profile.phone ? userProfile.profile.phone : ''}</span>
+                            <span>{userProfile ? userProfile.profile.phone : 'null'}</span>
                         </div>
                     </div>
                     <div className={`w-full ${edit ? 'block' : 'hidden'}`}>

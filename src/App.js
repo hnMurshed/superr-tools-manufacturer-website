@@ -26,8 +26,13 @@ import Question3 from './pages/Blogs/Question3';
 import Question4 from './pages/Blogs/Question4';
 import Question5 from './pages/Blogs/Question5';
 import Question6 from './pages/Blogs/Question6';
+import useAdmin from './hooks/useAdmin';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from './firebase.init';
 
 function App() {
+  const [user] = useAuthState(auth);
+  const [admin] = useAdmin(user);
   return (
     <div>
       <ToastContainer />
@@ -45,12 +50,17 @@ function App() {
             <Dashboard />
           </RequireAuth>
         }>
-          <Route path='addproduct' element={<AddProduct />}></Route>
-          <Route path='manageusers' element={<ManageUser />}></Route>
-          <Route path='manageproducts' element={<ManageProducts />}></Route>
-          <Route index element={<ManageOrder />}></Route>
-          <Route index element={<MyOrders />}></Route>
-          <Route path='writereview' element={<WriteReview />}></Route>
+          {
+            admin ? <>
+              <Route path='addproduct' element={<AddProduct />}></Route>
+              <Route path='manageusers' element={<ManageUser />}></Route>
+              <Route path='manageproducts' element={<ManageProducts />}></Route>
+              <Route index element={<ManageOrder />}></Route>
+            </> : <>
+              <Route index element={<MyOrders />}></Route>
+              <Route path='writereview' element={<WriteReview />}></Route>
+            </>
+          }
           <Route path='myprofile' element={<MyProfile />}></Route>
         </Route>
         <Route path='login' element={<Login />}></Route>
