@@ -3,6 +3,7 @@ import { useQuery } from 'react-query';
 import Loading from '../../shared/Loading/Loading';
 import { FaUser } from "react-icons/fa";
 import Review from '../../shared/Review/Review';
+import { Link } from 'react-router-dom';
 
 const Reviews = () => {
     const { data: reviews, isLoading } = useQuery('reviews', () => fetch('https://mysterious-ravine-35179.herokuapp.com/getreviews').then(res => res.json()));
@@ -33,12 +34,24 @@ const Reviews = () => {
                                 <span>{review.reviewTitle}</span>
                                 <div className='flex items-center'>
                                     {
-                                        [...Array(review.rating).keys()].map(key => <Review key={key}></Review>)
+                                        [...Array(review.rating).keys()].map(key => <Review 
+                                            key={key}
+                                            textColor='text-amber-400'
+                                        ></Review>)
+                                    }
+                                    {
+                                        [...Array(5-review.rating).keys()].map(key => (key+1) && <Review 
+                                            key={key}
+                                            textColor='text-slate-300'
+                                        ></Review>)
                                     }
                                 </div>
                             </div>
                         </div>)
                     }
+                </div>
+                <div className="text-center mt-6">
+                    <Link to='/allreviews' className='btn btn-accent text-white'>See All Reviews</Link>
                 </div>
             </div>
         </section>

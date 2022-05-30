@@ -1,10 +1,10 @@
 import React from 'react';
 import { FaStar } from "react-icons/fa";
 
-const Review = () => {
+const Review = ({textColor}) => {
     return (
         <FaStar
-            className='text-amber-400'
+            className={`${textColor}`}
         ></FaStar>
     );
 };
