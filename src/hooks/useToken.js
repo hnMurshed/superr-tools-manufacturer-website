@@ -10,17 +10,18 @@ const useToken = user => {
             fetch('https://mysterious-ravine-35179.herokuapp.com/user', {
                 method: 'PUT',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    authorization: `Bearer ${localStorage.getItem('access_token')}`
                 },
-                body: JSON.stringify({email})
+                body: JSON.stringify({ email })
             })
-            .then(res => res.json())
-            .then(data => {
-                if (data.accessToken) {
-                    localStorage.setItem('access_token', data.accessToken);
-                    setToken(data.accessToken);
-                }
-            });
+                .then(res => res.json())
+                .then(data => {
+                    if (data.accessToken) {
+                        localStorage.setItem('access_token', data.accessToken);
+                        setToken(data.accessToken);
+                    }
+                });
         };
     }, [user]);
 

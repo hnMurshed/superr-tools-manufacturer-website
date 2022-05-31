@@ -1,13 +1,14 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../Loading/Loading';
 
 const Header = () => {
     // react firebase hooks
     const [user, loading, error] = useAuthState(auth);
+    const location = useLocation();
 
     if (loading) {
         return <Loading></Loading>
@@ -28,7 +29,7 @@ const Header = () => {
                         <label tabIndex="0" className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
-                        <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                        <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-accent rounded-box w-52">
                             {navItems}
                         </ul>
                     </div>
@@ -62,7 +63,7 @@ const Header = () => {
                         </div> :
                             <Link to='/login' className="btn btn-sm btn-outline btn-secondary border-2 rounded-md">Login</Link>
                     }
-                    <label htmlFor="dashboard-drawer" class="btn btn-primary drawer-button lg:hidden">
+                    <label htmlFor="dashboard-drawer" class={`btn btn-ghost drawer-button ${location.pathname === '/dashboard' ? 'flex' : 'hidden'} lg:hidden`}>
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
                 </div>

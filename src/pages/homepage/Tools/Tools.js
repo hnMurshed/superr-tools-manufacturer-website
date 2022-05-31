@@ -5,7 +5,13 @@ import Loading from '../../shared/Loading/Loading';
 import Tool from './Tool';
 
 const Tools = () => {
-    const { data: tools, isLoading } = useQuery('tools', () => fetch(`https://mysterious-ravine-35179.herokuapp.com/tools?page=0&quantity=3`).then(res => res.json()));
+    const { data: tools, isLoading } = useQuery('tools', () => fetch(`https://mysterious-ravine-35179.herokuapp.com/tools?page=0&quantity=3`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            authorization: `Bearer ${localStorage.getItem('access_token')}`
+        }
+    }).then(res => res.json()));
 
     if (isLoading) {
         return <Loading></Loading>

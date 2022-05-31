@@ -6,7 +6,13 @@ import Review from '../../shared/Review/Review';
 import { Link } from 'react-router-dom';
 
 const Reviews = () => {
-    const { data: reviews, isLoading } = useQuery('reviews', () => fetch('https://mysterious-ravine-35179.herokuapp.com/getreviews').then(res => res.json()));
+    const { data: reviews, isLoading } = useQuery('reviews', () => fetch('https://mysterious-ravine-35179.herokuapp.com/getreviews', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            authorization: `Bearer ${localStorage.getItem('access_token')}`
+        }
+    }).then(res => res.json()));
 
     if (isLoading) {
         return <Loading></Loading>
@@ -34,13 +40,13 @@ const Reviews = () => {
                                 <span>{review.reviewTitle}</span>
                                 <div className='flex items-center'>
                                     {
-                                        [...Array(review.rating).keys()].map(key => <Review 
+                                        [...Array(review.rating).keys()].map(key => <Review
                                             key={key}
                                             textColor='text-amber-400'
                                         ></Review>)
                                     }
                                     {
-                                        [...Array(5-review.rating).keys()].map(key => (key+1) && <Review 
+                                        [...Array(5 - review.rating).keys()].map(key => (key + 1) && <Review
                                             key={key}
                                             textColor='text-slate-300'
                                         ></Review>)
