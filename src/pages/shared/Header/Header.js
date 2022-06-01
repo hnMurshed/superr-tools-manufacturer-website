@@ -21,6 +21,8 @@ const Header = () => {
         <li><Link to='/blogs'>Blogs</Link></li>
         <li><Link to='/portfolio'>Portfolio</Link></li>
     </>
+
+    const drawerCollapseBarOptions = location.pathname === '/dashboard' || location.pathname === '/blogs' || location.pathname === '/portfolio';
     return (
         <header className="bg-accent sticky top-0 z-50 text-white">
             <div className="navbar custom-container mx-auto">
@@ -63,7 +65,7 @@ const Header = () => {
                         </div> :
                             <Link to='/login' className="btn btn-sm btn-outline btn-secondary border-2 rounded-md">Login</Link>
                     }
-                    <label htmlFor="dashboard-drawer" class={`btn btn-ghost drawer-button ${location.pathname === '/dashboard' ? 'flex' : 'hidden'} lg:hidden`}>
+                    <label htmlFor="drawer" class={`btn btn-ghost drawer-button ${drawerCollapseBarOptions ? 'flex' : 'hidden'} lg:hidden`}>
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
                 </div>

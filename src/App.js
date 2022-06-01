@@ -29,6 +29,7 @@ import Question6 from './pages/Blogs/Question6';
 import useAdmin from './hooks/useAdmin';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './firebase.init';
+import Portfolio from './pages/Portfolio/Portfolio';
 
 function App() {
   const [user] = useAuthState(auth);
@@ -74,6 +75,7 @@ function App() {
         </Route>
         <Route path='register' element={<Register />}></Route>
         <Route path='allproducts' element={<AllProducts />}></Route>
+        <Route path='portfolio' element={<Portfolio />}></Route>
         <Route path='*' element={<NotFound />}></Route>
       </Routes>
       <Footer></Footer>

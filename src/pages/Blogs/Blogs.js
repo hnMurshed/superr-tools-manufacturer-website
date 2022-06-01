@@ -6,15 +6,15 @@ const Blogs = () => {
         <div className='custom-container py-8'>
             <h2 className='text-center text-3xl font-bold text-secondary mb-8'>Our Blogs</h2>
             <div class="drawer drawer-mobile gap-x-5">
-                <input id="dashboard-drawer" type="checkbox" class="drawer-toggle" />
+                <input id="drawer" type="checkbox" class="drawer-toggle" />
                 <div class="drawer-content">
                     {/* <!-- Page content here --> */}
                     <Outlet />
 
                 </div>
                 <div class="drawer-side">
-                    <label htmlFor="dashboard-drawer" class="drawer-overlay"></label>
-                    <ul class="menu p-4 overflow-y-auto w-80 bg-transparent text-base-content">
+                    <label htmlFor="drawer" class="drawer-overlay"></label>
+                    <ul class="menu p-4 overflow-y-auto w-52 bg-accent text-base-content">
                         {/* <!-- Sidebar content here --> */}
                         <li><Link to=''>How will you improve the performance of a React Application?</Link></li>
                         <li><Link to='question-2'>What are the different ways to manage a state in a React application?</Link></li>
