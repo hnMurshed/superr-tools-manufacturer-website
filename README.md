@@ -1,4 +1,15 @@
-#Installed Packages
+# [Superr Tools](https://superr-tools.web.app/) (Manufacturer website)
+
+This webist is developed and designed for a tools manufacturer company where the company can display their products, take online online booking, and get payment. The company can manage products, users, order, or add new product. 
+
+# Key features:
+
+* Login, sign up, and sign out system, features to delete product, add product, place order, cancel order, write review, change user role to admin or user, etc.
+* Limited the activities based on user role. Users have access to place orders, delete unpaid orders, and write a review. Admin can manage users, orders, products, and add a product.
+* Developed with JavaScript, React, html, css, tailwind, daisyUI, Firebase, ExpressJS, MongoDB, Use Query, React hook form, etc.
+
+
+# Installed Packages
 
 * Tailwind css
 * Daisy UI
@@ -9,6 +20,8 @@
 * React Icons
 * React query
 * React toastify
+
+[View server side codes](https://github.com/hnMurshed/superr-tools-server)
 
 # Getting Started with Create React App
 
