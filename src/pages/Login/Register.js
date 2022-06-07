@@ -86,7 +86,7 @@ const Register = () => {
         await updateProfile({displayName: name});
     }
     return (
-        <div className='flex items-center justify-center'>
+        <div className='flex items-center justify-center my-8'>
             <div className='register-box bg-primary'>
                 <h2 className='text-center text-white text-3xl mb-4'>Sign Up</h2>
                 <form onSubmit={handleRegister}>
@@ -120,7 +120,7 @@ const Register = () => {
                         <label htmlFor="checkbox" className=' text-white'>I agree to <strong className=' text-teal-200 hover:border-b-2 border-teal-200'>Terms & Conditions</strong> and <strong className=' text-teal-200 hover:border-b-2 border-teal-200'>Privacy Policy</strong></label>
                     </div>
                     <div>
-                        <input className='input-submit w-full bg-accent py-3' type="submit" value="Create Your Account" />
+                        <input className='input-submit w-full bg-secondary py-3' type="submit" value="Create Your Account" />
                     </div>
                     {errorElement}
                 </form>

@@ -45,7 +45,7 @@ const ProductPage = () => {
                             if (quantity === 50) {
                                 toast.error('Order less than 50 is not possible')
                             }
-                        }} className="w-12 bg-accent flex items-center justify-center rounded-l-md cursor-pointer">
+                        }} className="w-12 bg-secondary flex items-center justify-center rounded-l-md cursor-pointer">
                             <span className='text-4xl pb-2'>-</span>
                         </div>
                         <div className="w-20 flex items-center justify-center border border-gray-300">
@@ -58,7 +58,7 @@ const ProductPage = () => {
                             if (quantity === stock) {
                                 toast.error(`Stock is limited. Not possible to take order over ${stock}`)
                             }
-                        }} className="w-12 bg-accent flex items-center justify-center rounded-r-md cursor-pointer">
+                        }} className="w-12 bg-secondary flex items-center justify-center rounded-r-md cursor-pointer">
                             <span className='text-4xl pb-2'>+</span>
                         </div>
                     </div>

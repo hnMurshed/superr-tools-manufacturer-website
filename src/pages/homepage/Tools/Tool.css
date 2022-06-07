@@ -1,0 +1,8 @@
+.quick-view {
+    transform: translateY(48px);
+    transition: 0.5s;
+}
+
+.tool:hover .quick-view {
+    transform: translateY(0);
+}

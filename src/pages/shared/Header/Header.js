@@ -24,14 +24,14 @@ const Header = () => {
 
     const drawerCollapseBarOptions = location.pathname === '/dashboard' || location.pathname === '/blogs' || location.pathname === '/portfolio';
     return (
-        <header className="bg-accent sticky top-0 z-50 text-white">
+        <header className="bg-secondary sticky top-0 z-50 text-white">
             <div className="navbar custom-container mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex="0" className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
-                        <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-accent rounded-box w-52">
+                        <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-secondary rounded-box w-52">
                             {navItems}
                         </ul>
                     </div>
@@ -63,7 +63,7 @@ const Header = () => {
                                 <li><span onClick={() => signOut(auth)}>Logout</span></li>
                             </ul>
                         </div> :
-                            <Link to='/login' className="btn btn-sm btn-outline btn-secondary border-2 rounded-md">Login</Link>
+                            <Link to='/login' className="btn btn-sm bg-white hover:bg-transparent border-2 border-white hover:border-white hover:text-white rounded-md">Login</Link>
                     }
                     <label htmlFor="drawer" class={`btn btn-ghost drawer-button ${drawerCollapseBarOptions ? 'flex' : 'hidden'} lg:hidden`}>
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>

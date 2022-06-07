@@ -61,7 +61,7 @@ const Login = () => {
         signInWithEmailAndPassword(email, password);
     }
     return (
-        <div className='flex items-center justify-center'>
+        <div className='flex items-center justify-center my-8'>
             <div className='register-box bg-secondary'>
                 <h2 className='text-center text-white text-3xl mb-4'>Login</h2>
                 <form onSubmit={handleLogin}>

@@ -14,7 +14,7 @@ const Blogs = () => {
                 </div>
                 <div class="drawer-side">
                     <label htmlFor="drawer" class="drawer-overlay"></label>
-                    <ul class="menu p-4 overflow-y-auto w-52 bg-accent text-base-content">
+                    <ul class="menu p-4 overflow-y-auto w-52 bg-secondary lg:bg-transparent text-base-content text-white lg:text-slate-900">
                         {/* <!-- Sidebar content here --> */}
                         <li><Link to=''>How will you improve the performance of a React Application?</Link></li>
                         <li><Link to='question-2'>What are the different ways to manage a state in a React application?</Link></li>

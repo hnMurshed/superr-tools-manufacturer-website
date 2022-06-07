@@ -25,7 +25,7 @@ const Dashboard = () => {
                 </div>
                 <div class="drawer-side">
                     <label htmlFor="drawer" class="drawer-overlay"></label>
-                    <ul class="menu p-4 overflow-y-auto w-52 bg-accent lg:bg-transparent text-base-content">
+                    <ul class="menu p-4 overflow-y-auto w-52 bg-secondary lg:bg-transparent text-base-content">
                         {/* <!-- Sidebar content here --> */}
                         {
                             admin ? <>
